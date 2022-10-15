@@ -1,0 +1,12 @@
+header{
+    box-shadow: 0 2px 5px #dbdbdb;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    align-items: center;
+}
+
+
+header > div{
+    cursor: pointer;
+}
