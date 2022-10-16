@@ -21,7 +21,7 @@ export const getTasks = (teamID, userName, tasksFromWho) => (dispatch) => {
     .get(
       `${process.env.REACT_APP_API_TASKS}?teamID=${teamID}${
         tasksFromWho === "ME" ? `&creator=${userName}` : ""
-      }`
+      }.json`
     )
     .then((data) => {
       dispatch(tasksSuccess(data.data));
@@ -35,7 +35,7 @@ export const deleteTasks =
   (id, teamID, userName, tasksFromWho) => (dispatch) => {
     dispatch(tasksRequest());
     axios
-      .delete(`${process.env.REACT_APP_API_TASKS}/${id}`)
+      .delete(`${process.env.REACT_APP_API_TASKS}/${id}.json`)
       .then(() => {
         dispatch(getTasks(teamID, userName, tasksFromWho));
       })
@@ -53,7 +53,7 @@ export const editTaskStatus =
         : statusArray.indexOf(data.status) + 1;
     dispatch(tasksRequest());
     axios
-      .patch(`${process.env.REACT_APP_API_TASKS}/${data.id}`, { ...data,status:statusArray[newStatusIndex] })
+      .patch(`${process.env.REACT_APP_API_TASKS}/${data.id}.json`, { ...data,status:statusArray[newStatusIndex] })
       .then(() => {
         dispatch(getTasks(teamID, userName, tasksFromWho));
       })

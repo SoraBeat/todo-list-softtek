@@ -14,7 +14,7 @@ const Register = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await axios.get(process.env.REACT_APP_API_DATA);
+      const res = await axios.get(process.env.REACT_APP_API_DATA+".json");
       await setData(res.data);
     };
     getData();
@@ -34,7 +34,7 @@ const Register = () => {
   const onSubmit = () => {
     const teamID = !values.teamID ? uuid4() : values.teamID;
     const postData = async () => {
-      await axios.post(process.env.REACT_APP_API_TEAMS, {
+      await axios.post(process.env.REACT_APP_API_TEAMS+".json", {
         userName: values.userName,
         password: values.password,
         email: values.email,
