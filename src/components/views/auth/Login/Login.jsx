@@ -27,7 +27,7 @@ const Login = () => {
   const onSubmit = () => {
     const login = async () => {
       const res = await axios.get(
-        `${process.env.REACT_APP_API_TEAMS}?email=${values.email}&password=${values.password}.json`
+        `${process.env.REACT_APP_API_TEAMS}?email=${values.email}&password=${values.password}`
       );
        const user =await res.data[0];
       if (user) {
