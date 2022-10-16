@@ -64,6 +64,56 @@
   border-color: var(--global-primary-color);
   color: white;
 }
+#tasks .card button.low {
+  background-color: #4dca27;
+  border-color: #4dca27;
+}
+#tasks .card button.low:hover {
+  background-color: #ffffff;
+  color: #4dca27;
+}
+#tasks .card button.high {
+  background-color: #f74a4a;
+  border-color: #f74a4a;
+}
+#tasks .card button.high:hover {
+  background-color: #ffffff;
+  color: #f74a4a;
+}
+#tasks .card button.medium {
+  background-color: #ccf537;
+  border-color: #ccf537;
+  color: #000000;
+}
+#tasks .card button.medium:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+#tasks .card button.new {
+  background-color: #4dca27;
+  border-color: #4dca27;
+}
+#tasks .card button.new:hover {
+  background-color: #ffffff;
+  color: #4dca27;
+}
+#tasks .card button.done {
+  background-color: #f74a4a;
+  border-color: #f74a4a;
+}
+#tasks .card button.done:hover {
+  background-color: #ffffff;
+  color: #f74a4a;
+}
+#tasks .card button.inProcess {
+  background-color: #ccf537;
+  border-color: #ccf537;
+  color: #000000;
+}
+#tasks .card button.inProcess:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
 
 #tasks .card p {
   color: #424242;
@@ -72,7 +122,7 @@
   margin: 0;
 }
 
-@media (min-width:1300px) {
+@media (min-width:1000px) {
   #tasks {
     display: flex;
       flex-direction: row;

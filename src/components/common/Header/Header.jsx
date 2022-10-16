@@ -1,20 +1,30 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./Header.css";
 
 const Header = () => {
+  const {userName}=useParams();
     const navigate=useNavigate()
     const handleLogout = ()=>{
         localStorage.removeItem("logged");
-        navigate("/login")
+        navigate("/")
     }
+    const { tasks } = useSelector((state) => {
+      return state.tasksReducer;
+    });
 
   return (
     <header>
       <h2>Go Scrum</h2>
-      <div onClick={handleLogout}>
+      <div className="wrapper_right_header">
+      <div><b>Tareas creadas: {tasks.length}</b></div>
+        <div><b>{userName}</b></div>
+        <div onClick={handleLogout}>
         <h2>x</h2>
       </div>
+      </div>
+
     </header>
   );
 };

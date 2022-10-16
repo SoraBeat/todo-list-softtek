@@ -1,0 +1,103 @@
+{
+  "data": {
+    "continent": [
+      "America",
+      "Europa",
+      "Otro"
+    ],
+    "region": [
+      "Otro",
+      "Latam",
+      "Brasil",
+      "America del Norte"
+    ],
+    "role": [
+      "Team Member",
+      "Team Leader"
+    ]
+  },
+  "teams": [
+    {
+      "userName": "LautaroRoa",
+      "password": "123",
+      "email": "lautaroa.lr@gmail.com",
+      "teamID": "71f02ea4-4d2f-4d0e-a662-203a917e7030",
+      "role": "Team Leader",
+      "continent": "America",
+      "region": "Latam",
+      "id": 1
+    },
+    {
+      "userName": "Alan",
+      "password": "123",
+      "email": "alanroa.ar@gmail.com",
+      "teamID": "71f02ea4-4d2f-4d0e-a662-203a917e7030",
+      "role": "Team Leader",
+      "continent": "America",
+      "region": "Latam",
+      "id": 2
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Task 1",
+      "dateTime": "2022-10-15T21:39:04.360Z",
+      "creator": "LautaroRoa",
+      "description": "Descripcion 1",
+      "status": "new",
+      "priority": "low",
+      "teamID": "71f02ea4-4d2f-4d0e-a662-203a917e7030"
+    },
+    {
+      "id": 2,
+      "title": "Task 2",
+      "dateTime": "2022-10-15T21:39:04.360Z",
+      "creator": "LautaroRoa",
+      "description": "Descripcion 1",
+      "status": "inProcess",
+      "priority": "medium",
+      "teamID": "71f02ea4-4d2f-4d0e-a662-203a917e7030"
+    },
+    {
+      "id": 3,
+      "title": "Task 3",
+      "dateTime": "2022-10-15T21:39:04.360Z",
+      "creator": "LautaroRoa",
+      "description": "Descripcion 1",
+      "status": "done",
+      "priority": "high",
+      "teamID": "71f02ea4-4d2f-4d0e-a662-203a917e7030"
+    },
+    {
+      "title": "Tarea de Alan",
+      "status": "new",
+      "priority": "medium",
+      "description": "asd",
+      "dateTime": "2022-10-15T21:39:04.360Z",
+      "creator": "Alan",
+      "teamID": "71f02ea4-4d2f-4d0e-a662-203a917e7030",
+      "id": 6
+    },
+    {
+      "title": "Tarea Larga",
+      "status": "inProgress",
+      "priority": "low",
+      "description": "My left donut is missing, as is my right ð•„ð”¼ð•†ð•Ž. Ooh, are those your $250 dollar sandals? lemme use that as my litter box miaow then turn around and show you my bum, and pushed the mug off the table. So you're just gonna scroll by without saying meowdy? sit in window and stare oooh, a bird, yum so stare at guinea pigs pee on walls it smells like breakfast. Poop on grasses munch on tasty moths yet a nice warm laptop for me to sit on and i like to spend my days sleeping and eating fishes that my human fished for me we live on a luxurious yacht, sailing proudly under the sun, i like to walk on the deck, watching the horizon, dreaming of a good bowl of milk or haha you hold me hooman i scratch. Step on your keyboard while you're gaming and then turn in a circle pee in the shoe litter box is life, yet chill on the couch table and do doodoo in the litter-box, clickityclack on the piano, be frumpygrumpy. Kick up litter stares at human while pushing stuff off a table get suspicious of own shadow then go play with toilette paper cat snacks, for stand with legs in litter box, but poop outside. Relentlessly pursues moth nyan nyan goes the cat, scraaaaape scraaaape goes the walls when the cat murders them with",
+      "dateTime": "2022-10-15T22:34:53.710Z",
+      "creator": "LautaroRoa",
+      "teamID": "71f02ea4-4d2f-4d0e-a662-203a917e7030",
+      "id": 7
+    },
+    {
+      "title": "Tarea 4 ",
+      "status": "done",
+      "priority": "low",
+      "description": "Descripcion 4",
+      "dateTime": "2022-10-16T02:22:02.994Z",
+      "creator": "LautaroRoa",
+      "teamID": "71f02ea4-4d2f-4d0e-a662-203a917e7030",
+      "id": 8
+    }
+  ]
+}

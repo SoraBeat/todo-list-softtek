@@ -5,8 +5,8 @@ import { lazy, Suspense } from "react";
 import "./App.css";
 
 import AnimatedDiv from "./components/common/AnimatedDiv/AnimatedDiv";
-import Login from "./components/views/Login/Login";
-import Register from "./components/views/Register/Register";
+import Login from "./components/views/auth/Login/Login";
+import Register from "./components/views/auth/Register/Register"
 
 import Tasks from "./components/views/Tasks/Tasks";
 const Error404 =  lazy(()=>import("./components/views/Error404/Error404"))
@@ -16,9 +16,10 @@ const Error404 =  lazy(()=>import("./components/views/Error404/Error404"))
 
 const RequireAuth = ({ children }) => {
   if (!localStorage.getItem("logged"))
-    return <Navigate to="/login" replace={true} />;
+    return <Navigate to="/" replace={true} />;
   return children;
 };
+
 
 function App() {
   const location = useLocation();
@@ -27,14 +28,6 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
-          element={
-            <AnimatedDiv>
-              <Tasks />
-            </AnimatedDiv>
-          }
-        />
-        <Route
-          path="/login"
           element={
             <AnimatedDiv>
               <Login />
@@ -50,7 +43,7 @@ function App() {
           }
         />
         <Route
-          path="/tasks"
+          path="/tasks/:teamID/:userName"
           element={
             <AnimatedDiv>
               <RequireAuth>

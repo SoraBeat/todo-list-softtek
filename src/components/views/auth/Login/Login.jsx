@@ -1,8 +1,10 @@
 import React from "react";
 import { useFormik } from "formik";
+import Swal from 'sweetalert2'
 
-import { useNavigate } from "react-router-dom";
-import "./Login.css"
+import { useNavigate, Link } from "react-router-dom";
+import "../Auth.css";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -23,8 +25,19 @@ const Login = () => {
     return errors;
   };
   const onSubmit = () => {
-    localStorage.setItem("logged", "yes");
-    navigate("/tasks");
+    const login = async () => {
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_TEAMS}?email=${values.email}&password=${values.password}`
+      );
+       const user =await res.data[0];
+      if (user) {
+        await localStorage.setItem("logged", "yes");
+        await navigate(`/tasks/${res.data[0].teamID}/${res.data[0].userName}`);
+      } else {
+        await Swal.fire("Inalid credentials, try again");
+      }
+    };
+    login();
   };
 
   const formik = useFormik({ initialValues, validate, onSubmit });
@@ -41,6 +54,7 @@ const Login = () => {
             type="email"
             value={values.email}
             onChange={handleChange}
+            className={errors.email ? "error" : ""}
           />
           {formik.errors.email && <div>{errors.email}</div>}
         </div>
@@ -51,11 +65,15 @@ const Login = () => {
             type="password"
             value={values.password}
             onChange={handleChange}
+            className={errors.password ? "error" : ""}
           />
           {formik.errors.password && <div>{errors.password}</div>}
         </div>
         <div>
           <input type="submit" value="Enviar" />
+        </div>
+        <div>
+          <Link to={"/register"}>Registrarme</Link>
         </div>
       </form>
     </div>

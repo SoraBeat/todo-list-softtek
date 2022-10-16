@@ -63,7 +63,7 @@
     color: var(--global-primary-color);
   }
  
-@media (min-width:1300px) {
+@media (min-width:1000px) {
   .task-form{
     width: 50%;
   }

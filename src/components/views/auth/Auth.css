@@ -19,7 +19,12 @@
   flex-direction: column;
 }
 
-.auth input {
+.auth > form > div > a{
+  text-decoration: none;
+  color: blue;
+}
+.auth input,
+.auth select {
   border-radius: var(--global-radius);
   border: var(--global-border);
 }
@@ -51,6 +56,9 @@
 
 .auth > form > div > *:not(label) {
   padding: 8px 0;
+}
+.error{
+  border:1px solid red!important;
 }
 
 @media screen and (min-width: 600px) {
