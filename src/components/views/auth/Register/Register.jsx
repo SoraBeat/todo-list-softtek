@@ -13,6 +13,7 @@ const Register = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
+    localStorage.removeItem("logged");
     const getData = async () => {
       const res = await axios.get(process.env.REACT_APP_API_DATA);
       await setData(res.data);

@@ -4,27 +4,30 @@ import { useSelector } from "react-redux";
 import "./Header.css";
 
 const Header = () => {
-  const {userName}=useParams();
-    const navigate=useNavigate()
-    const handleLogout = ()=>{
-        localStorage.removeItem("logged");
-        navigate("/")
-    }
-    const { tasks } = useSelector((state) => {
-      return state.tasksReducer;
-    });
+  const { userName } = useParams();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("logged");
+    navigate("/");
+  };
+  const { tasks } = useSelector((state) => {
+    return state.tasksReducer;
+  });
 
   return (
     <header>
-      <h2>Go Scrum</h2>
+      <h2>ToDoList SOFTTEK</h2>
       <div className="wrapper_right_header">
-      <div><b>Tareas creadas: {tasks.length}</b></div>
-        <div><b>{userName}</b></div>
+        <div>
+          <b>Tareas creadas: {tasks.length}</b>
+        </div>
+        <div>
+          <b>{userName}</b>
+        </div>
         <div onClick={handleLogout}>
-        <h2>x</h2>
+          <h2>LOGOUT</h2>
+        </div>
       </div>
-      </div>
-
     </header>
   );
 };

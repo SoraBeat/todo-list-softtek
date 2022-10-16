@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 import { useNavigate, Link } from "react-router-dom";
 import "../Auth.css";
@@ -8,6 +8,10 @@ import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    localStorage.removeItem("logged");
+  }, []);
 
   const initialValues = {
     email: "",
@@ -29,7 +33,7 @@ const Login = () => {
       const res = await axios.get(
         `${process.env.REACT_APP_API_TEAMS}?email=${values.email}&password=${values.password}`
       );
-       const user =await res.data[0];
+      const user = await res.data[0];
       if (user) {
         await localStorage.setItem("logged", "yes");
         await navigate(`/tasks/${res.data[0].teamID}/${res.data[0].userName}`);
